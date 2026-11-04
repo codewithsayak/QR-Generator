@@ -640,7 +640,7 @@ const QRS_QR = (function () {
      ====================================================================== */
   function renderSVG({ matrix, design, size = 0, width = 0, height = 0, includeQuiet = true, transparent = false, title = 'QR code' }) {
     if (!matrix) throw new Error('No QR matrix to render.');
-    const fg = safeHex(design.fg, '#0B1220');
+    const fg = safeHex(design.fg, '#0B1512');
     const bg = safeHex(design.bg, '#FFFFFF');
     const eyeColor = eyeColorFor(design);
     const margin = includeQuiet ? clamp(Number(design.margin) || 0, 0, 10) : 0;
@@ -705,7 +705,7 @@ const QRS_QR = (function () {
     if (!matrix) throw new Error('No QR matrix to render.');
     if (typeof Path2D === 'undefined') throw new Error('This browser cannot render QR exports. Please update your browser.');
 
-    const fg = safeHex(design.fg, '#0B1220');
+    const fg = safeHex(design.fg, '#0B1512');
     const bg = safeHex(design.bg, '#FFFFFF');
     const eyeColor = eyeColorFor(design);
     const margin = includeQuiet ? clamp(Number(design.margin) || 0, 0, 10) : 0;
@@ -769,7 +769,7 @@ const QRS_QR = (function () {
     const notes = [];
     if (!matrix) return notes;
 
-    const fg = safeHex(design.fg, '#0B1220');
+    const fg = safeHex(design.fg, '#0B1512');
     // A transparent background is judged against white: that is what a scanner
     // would see on paper or on most screens.
     const bg = design.transparent ? '#FFFFFF' : safeHex(design.bg, '#FFFFFF');

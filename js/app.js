@@ -18,9 +18,9 @@
   } = U;
 
   const DEFAULT_DESIGN = {
-    fg: '#0B1220',
+    fg: '#0B1512',
     bg: '#FFFFFF',
-    eyeColor: '#1D4ED8',
+    eyeColor: '#0F766E',
     eyeColorEnabled: false,
     ecc: 'M',
     margin: 4,
@@ -41,14 +41,14 @@
   };
 
   const PRESETS = [
-    { name: 'Midnight', fg: '#0B1220', bg: '#FFFFFF' },
-    { name: 'Electric', fg: '#1D4ED8', bg: '#FFFFFF' },
-    { name: 'Violet', fg: '#5B21B6', bg: '#F5F3FF' },
-    { name: 'Forest', fg: '#065F46', bg: '#ECFDF5' },
-    { name: 'Ember', fg: '#9A3412', bg: '#FFF7ED' },
-    { name: 'Ink', fg: '#111827', bg: '#E5E7EB' },
-    { name: 'Cyan', fg: '#0E7490', bg: '#ECFEFF' },
-    { name: 'Invert', fg: '#FFFFFF', bg: '#0B1220' }
+    { name: 'Graphite', fg: '#111827', bg: '#FFFFFF' },
+    { name: 'Pine', fg: '#064E3B', bg: '#ECFDF5' },
+    { name: 'Teal', fg: '#0F766E', bg: '#F0FDFA' },
+    { name: 'Clay', fg: '#7C2D12', bg: '#FFF7ED' },
+    { name: 'Ruby', fg: '#9F1239', bg: '#FFF1F2' },
+    { name: 'Sage', fg: '#3F6212', bg: '#F7FEE7' },
+    { name: 'Cocoa', fg: '#44403C', bg: '#FAF7F2' },
+    { name: 'Invert', fg: '#FFFFFF', bg: '#0B1512' }
   ];
 
   const FIELD_DEFAULTS = {
@@ -180,7 +180,7 @@
       toggle.setAttribute('title', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
     }
     const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', next === 'dark' ? '#14171e' : '#e9edf5');
+    if (meta) meta.setAttribute('content', next === 'dark' ? '#0F1514' : '#E9EDEA');
   }
 
   function toggleTheme() {
@@ -687,7 +687,7 @@
         options.apply(hex);
       } else {
         hexEl.value = getter();
-        toast('Enter a valid hex color such as #1D4ED8.', { type: 'error', title: 'Invalid color' });
+        toast('Enter a valid hex color such as #0F766E.', { type: 'error', title: 'Invalid color' });
       }
     });
   }

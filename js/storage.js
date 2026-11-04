@@ -84,9 +84,9 @@ const QRS_STORAGE = (function () {
      Sanitisers — only whitelisted, correctly typed fields are ever stored.
      -------------------------------------------------------------------- */
   const DESIGN_DEFAULTS = {
-    fg: '#0B1220',
+    fg: '#0B1512',
     bg: '#FFFFFF',
-    eyeColor: '#1D4ED8',
+    eyeColor: '#0F766E',
     eyeColorEnabled: false,
     ecc: 'M',
     margin: 4,
