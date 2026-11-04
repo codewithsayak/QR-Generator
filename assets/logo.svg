@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="QR Studio logo">
   <defs>
     <linearGradient id="qsLogoGradient" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#3B82F6"/>
-      <stop offset="0.55" stop-color="#4F7BFF"/>
-      <stop offset="1" stop-color="#8B5CF6"/>
+      <stop offset="0" stop-color="#5EEAD4"/>
+      <stop offset="0.5" stop-color="#2DD4BF"/>
+      <stop offset="1" stop-color="#0F766E"/>
     </linearGradient>
     <linearGradient id="qsLogoShine" x1="8" y1="4" x2="40" y2="44" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>

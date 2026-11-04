@@ -200,9 +200,10 @@ Other branding points:
 
 - **Name, tagline and copy** — edit `index.html` (header, hero, footer, FAQ).
 - **Logo & favicon** — replace `assets/logo.svg` and `assets/favicon.svg`.
-- **Colours** — the design tokens are at the top of `css/style.css` (`--accent`, `--violet`,
-  `--gradient`, plus the `html[data-theme]` blocks). Adjusting three or four tokens re-skins
-  the whole studio.
+- **Colours** — the design tokens are at the top of `css/style.css` (`--accent`, `--accent-2`, `--accent-text`,
+  `--gradient`, `--gradient-btn`, plus the `html[data-theme]` blocks). Adjusting three or four tokens re-skins
+  the whole studio. The shipped palette is **deep teal → emerald on warm charcoal**, with a single champagne
+  gold micro-accent (`--gold`) used for the eyebrow dot and the hairline above the header.
 - **Default QR design** — `DEFAULT_DESIGN` in `js/app.js`.
 - **Presets** — the `PRESETS` array in `js/app.js`.
 - **Templates** — the `TEMPLATES` array in `js/qr-generator.js`.
