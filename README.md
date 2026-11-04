@@ -295,6 +295,7 @@ QR Studio degrades gracefully instead of breaking, but these features depend on 
 | SVG export | Any modern browser | — |
 | LocalStorage | Not blocked, not full | Studio still works; saving/history show a warning |
 | `color-mix()` styling | Chrome & Safari 16.4+, Firefox 113+ | Solid header/tint fallbacks are declared first |
+| Web font (Inter) | Network access to Google Fonts | Falls back to `system-ui` / Segoe UI / Roboto |
 | Google Inter font | Network access | System font stack is used |
 
 Tested markup/behaviour targets current Chrome, Edge, Firefox and Safari. Very old browsers
@@ -336,15 +337,21 @@ verified during development with an automated jsdom + rasterisation harness:
   and logo variants.
 - LocalStorage round-trips plus malformed/corrupt record recovery.
 
-**Scan verification (66 + 15 images decoded)**
-- Every style × error-correction × margin × logo combination was rasterised and decoded with
-  the ZXing decoder — 66/66 matched the original payload exactly. Every one of the 10 content
-  types decoded back to its exact structured string.
+**Scan verification (83 images decoded)**
+- A 66-case stress matrix (3 module shapes × 4 eye shapes × 4 error-correction levels, margins
+  0–10, logos at 16–26 % with 0–16 % padding, transparent and inverted variants) was rasterised
+  and decoded with the ZXing decoder — 66/66 matched the original payload exactly.
+- All 10 content types were decoded back to their exact structured strings (15/15).
+- The exported PNG (canvas path) and exported SVG were rasterised and decoded as well (2/2).
 
 **Export (23 checks)**
 - PNG/SVG/JPEG blobs, MIME types, filenames, dimension clamping (128–4096), non-square
   centring, JPEG opacity, transparent PNG, quiet-zone handling and graceful failure paths.
 - The canvas-rendered PNG and the SVG export were both rasterised and decoded successfully.
+
+**Logo flow (18 checks)**
+- Drop/upload validation, downscaling, auto-raising error correction to H, coverage warnings,
+  rejection of unsupported and oversized files, and removal.
 
 **Interface (75 checks)**
 - Type switching, live preview, validation display, templates, design controls, export
