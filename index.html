@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QR Studio — Premium QR Code Generator | Code With Sayak</title>
+  <meta name="description" content="QR Studio by Code With Sayak is a free, private QR code generator. Create branded, scannable QR codes for links, Wi-Fi, contacts, events and more, then export as PNG, SVG or JPEG — everything runs in your browser." />
+  <meta name="author" content="Code With Sayak" />
+  <meta name="theme-color" content="#14171e" />
+  <meta name="color-scheme" content="dark light" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="QR Studio — by Code With Sayak" />
+  <meta property="og:description" content="Design premium QR codes with custom colors, module styles, eye shapes and logos. Export high-resolution PNG, SVG and JPEG. 100% browser-based." />
+  <meta property="og:image" content="assets/logo.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ============================= SVG ICON SPRITE ============================= -->
+  <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+    <symbol id="i-text" viewBox="0 0 24 24"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><path d="M12 20h.01"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="m16 6-4-4-4 4"/><path d="M12 2v13"/></symbol>
+    <symbol id="i-save" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 3v5h5"/><path d="M3.05 13A9 9 0 1 0 6 5.3L3 8"/><path d="M12 7v5l4 2"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"/><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 22a10 10 0 1 1 10-10c0 2.5-2 3.5-3.5 3.5h-2.2a2.3 2.3 0 0 0-1.7 3.8A2.6 2.6 0 0 1 12 22z"/><circle cx="7.5" cy="11.5" r="1"/><circle cx="10.5" cy="7.5" r="1"/><circle cx="15.5" cy="7.5" r="1"/><circle cx="17.5" cy="11.5" r="1"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3zM20 14h1M14 20h1M18 18h3v3h-3z"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.3.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17.9 4.7 19 5 19 5c.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-telegram" viewBox="0 0 24 24"><path d="M21.5 3.5 2.8 10.7c-.9.3-.9 1.5 0 1.8l4.6 1.6 1.8 5.7c.2.8 1.2 1 1.7.3l2.6-3.1 4.7 3.4c.7.5 1.7.1 1.9-.7l3.3-14.9c.2-.9-.7-1.6-1.5-1.3z"/><path d="m8.2 14.2 9.3-6.7-7.4 8"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></symbol>
+  </svg>
+
+  <!-- ============================= NAVIGATION ============================= -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="QR Studio home">
+        <img class="brand__mark" src="assets/logo.svg" alt="" width="40" height="40" />
+        <span class="brand__text">
+          <strong>QR Studio</strong>
+          <small>by Code With Sayak</small>
+        </span>
+      </a>
+
+      <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primaryNav">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+        <a href="#studio">Studio</a>
+        <a href="#templates">Templates</a>
+        <a href="#saved">My QR Codes</a>
+        <a href="#recent">Recent</a>
+        <a href="#help">Help</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Toggle dark / light theme">
+          <svg class="icon icon--sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="icon icon--moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <span class="theme-toggle__thumb" aria-hidden="true"></span>
+        </button>
+        <a class="btn btn--primary btn--sm nav-cta" href="#studio">
+          <svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg>
+          Create QR
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============================= HERO ============================= -->
+    <section class="hero">
+      <div class="hero__glow hero__glow--blue" aria-hidden="true"></div>
+      <div class="hero__glow hero__glow--violet" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <p class="eyebrow"><span class="eyebrow__dot" aria-hidden="true"></span> Premium QR design, 100% in your browser</p>
+        <h1>QR codes that look<br /><span class="grad-text">like your brand.</span></h1>
+        <p class="hero__lead">
+          Create, customize and export scannable QR codes for links, Wi-Fi, contact cards,
+          WhatsApp, events and more — with custom colors, module styles, eye shapes and logos.
+          Nothing you type ever leaves your device.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#studio">
+            <svg class="icon" aria-hidden="true"><use href="#i-qr"/></svg>
+            Start designing
+          </a>
+          <a class="btn" href="#templates">
+            <svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg>
+            Browse templates
+          </a>
+        </div>
+        <ul class="hero__facts">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> 10 QR content types</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> PNG · SVG · JPEG</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> No sign-up, no server</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Logo ready</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================= STUDIO ============================= -->
+    <section class="section" id="studio">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="eyebrow">The workspace</p>
+            <h2>Design your QR code</h2>
+            <p class="section-sub">Pick a content type, fill in the details, then fine-tune the design. The preview updates as you type.</p>
+          </div>
+          <div class="section-head__tools">
+            <label class="switch" for="liveToggle" title="Regenerate the preview automatically while typing">
+              <input type="checkbox" id="liveToggle" checked />
+              <span class="switch__track" aria-hidden="true"><span class="switch__thumb"></span></span>
+              <span class="switch__label">Live preview</span>
+            </label>
+          </div>
+        </header>
+
+        <div class="workspace">
+          <!-- ---------------------- LEFT: CONTROLS ---------------------- -->
+          <div class="workspace__controls">
+
+            <section class="card" aria-labelledby="contentHeading">
+              <div class="card__head">
+                <span class="step-chip" aria-hidden="true">1</span>
+                <div>
+                  <h3 id="contentHeading">Content</h3>
+                  <p class="card__sub">Choose what the QR code should do.</p>
+                </div>
+              </div>
+
+              <div class="type-grid" id="typeGrid" role="group" aria-labelledby="contentHeading"><!-- filled by app.js --></div>
+              <p class="type-hint" id="typeHint"></p>
+
+              <form id="qrForm" class="form" novalidate>
+                <div id="dynamicFields" class="fields"><!-- filled by app.js --></div>
+                <div class="form__actions">
+                  <button class="btn btn--primary" type="submit" id="generateBtn">
+                    <svg class="icon" aria-hidden="true"><use href="#i-qr"/></svg>
+                    Generate QR code
+                  </button>
+                  <button class="btn" type="button" id="resetFormBtn">
+                    <svg class="icon" aria-hidden="true"><use href="#i-reset"/></svg>
+                    Reset form
+                  </button>
+                </div>
+                <p class="form__note" id="formNote" role="status" aria-live="polite"></p>
+              </form>
+            </section>
+
+            <section class="card" aria-labelledby="designHeading">
+              <div class="card__head">
+                <span class="step-chip" aria-hidden="true">2</span>
+                <div>
+                  <h3 id="designHeading">Design</h3>
+                  <p class="card__sub">Colors, shapes, quiet zone and error correction.</p>
+                </div>
+              </div>
+
+              <div class="field-group">
+                <span class="label">Color presets</span>
+                <div class="preset-grid" id="presetGrid" role="group" aria-label="Color presets"><!-- filled by app.js --></div>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label class="label" for="fgHex">Foreground</label>
+                  <div class="color-field">
+                    <input type="color" id="fgColor" value="#0b1220" aria-label="Foreground color picker" />
+                    <input class="input input--mono" type="text" id="fgHex" value="#0B1220" maxlength="7" spellcheck="false" autocomplete="off" aria-label="Foreground hex color" />
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label" for="bgHex">Background</label>
+                  <div class="color-field">
+                    <input type="color" id="bgColor" value="#ffffff" aria-label="Background color picker" />
+                    <input class="input input--mono" type="text" id="bgHex" value="#FFFFFF" maxlength="7" spellcheck="false" autocomplete="off" aria-label="Background hex color" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <span class="label" id="moduleStyleLabel">Module shape</span>
+                <div class="segmented segmented--wide" id="moduleStyleGroup" role="radiogroup" aria-labelledby="moduleStyleLabel">
+                  <label class="seg"><input type="radio" name="moduleStyle" value="square" checked /><span>Square</span></label>
+                  <label class="seg"><input type="radio" name="moduleStyle" value="rounded" /><span>Rounded</span></label>
+                  <label class="seg"><input type="radio" name="moduleStyle" value="dots" /><span>Dots</span></label>
+                </div>
+              </div>
+
+              <div class="field">
+                <span class="label" id="eyeStyleLabel">Eye (corner) shape</span>
+                <div class="segmented segmented--wide" id="eyeStyleGroup" role="radiogroup" aria-labelledby="eyeStyleLabel">
+                  <label class="seg"><input type="radio" name="eyeStyle" value="square" checked /><span>Square</span></label>
+                  <label class="seg"><input type="radio" name="eyeStyle" value="rounded" /><span>Rounded</span></label>
+                  <label class="seg"><input type="radio" name="eyeStyle" value="circle" /><span>Circle</span></label>
+                  <label class="seg"><input type="radio" name="eyeStyle" value="leaf" /><span>Leaf</span></label>
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="label-row">
+                  <label class="label" for="eyeColor">Eye color</label>
+                  <label class="check check--sm" for="eyeColorToggle">
+                    <input type="checkbox" id="eyeColorToggle" />
+                    <span>Use custom eye color</span>
+                  </label>
+                </div>
+                <div class="color-field">
+                  <input type="color" id="eyeColor" value="#1d4ed8" disabled aria-label="Eye color picker" />
+                  <input class="input input--mono" type="text" id="eyeHex" value="#1D4ED8" maxlength="7" disabled spellcheck="false" autocomplete="off" aria-label="Eye hex color" />
+                </div>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <div class="label-row">
+                    <label class="label" for="marginRange">Quiet zone</label>
+                    <output class="value-chip" id="marginValue" for="marginRange">4 modules</output>
+                  </div>
+                  <input class="range" type="range" id="marginRange" min="0" max="10" step="1" value="4" />
+                </div>
+                <div class="field">
+                  <label class="label" for="eccGroup">Error correction</label>
+                  <select class="select" id="eccGroup">
+                    <option value="L">L — Low (~7%)</option>
+                    <option value="M" selected>M — Medium (~15%)</option>
+                    <option value="Q">Q — Quartile (~25%)</option>
+                    <option value="H">H — High (~30%)</option>
+                  </select>
+                </div>
+              </div>
+
+              <label class="check" for="transparentBg">
+                <input type="checkbox" id="transparentBg" />
+                <span>Transparent background <em>(PNG &amp; SVG only)</em></span>
+              </label>
+
+              <div class="card__foot">
+                <button class="btn btn--sm" type="button" id="resetDesignBtn">
+                  <svg class="icon" aria-hidden="true"><use href="#i-reset"/></svg>
+                  Reset design
+                </button>
+                <button class="link-btn" type="button" id="resetAllBtn">Reset all settings</button>
+              </div>
+            </section>
+
+            <section class="card" aria-labelledby="logoHeading">
+              <div class="card__head">
+                <span class="step-chip" aria-hidden="true">3</span>
+                <div>
+                  <h3 id="logoHeading">Logo</h3>
+                  <p class="card__sub">Put your mark in the middle. Keep it small for reliable scanning.</p>
+                </div>
+              </div>
+
+              <div class="dropzone" id="logoDrop" tabindex="0" role="button" aria-describedby="logoHelp" aria-label="Upload a logo image">
+                <input type="file" id="logoInput" accept="image/png,image/jpeg,image/webp,image/svg+xml" class="visually-hidden" />
+                <img class="dropzone__preview" id="logoPreview" alt="" hidden />
+                <div class="dropzone__content" id="logoDropContent">
+                  <span class="dropzone__icon" aria-hidden="true"><svg class="icon"><use href="#i-upload"/></svg></span>
+                  <strong>Drop a logo or click to upload</strong>
+                  <small>PNG, JPEG, WEBP or SVG · max 2 MB · stored only on your device</small>
+                </div>
+              </div>
+              <p class="help-text" id="logoHelp">
+                We downscale your logo to 480px and keep it in memory only. Logos cover QR modules, so use error correction
+                <strong>Q</strong> or <strong>H</strong> and keep the logo at or below 25% of the code.
+              </p>
+
+              <div id="logoControls" class="fields" hidden>
+                <div class="field-row">
+                  <div class="field">
+                    <div class="label-row">
+                      <label class="label" for="logoSizeRange">Logo size</label>
+                      <output class="value-chip" id="logoSizeValue" for="logoSizeRange">22%</output>
+                    </div>
+                    <input class="range" type="range" id="logoSizeRange" min="10" max="32" step="1" value="22" />
+                  </div>
+                  <div class="field">
+                    <div class="label-row">
+                      <label class="label" for="logoPaddingRange">Padding</label>
+                      <output class="value-chip" id="logoPaddingValue" for="logoPaddingRange">12%</output>
+                    </div>
+                    <input class="range" type="range" id="logoPaddingRange" min="0" max="40" step="1" value="12" />
+                  </div>
+                </div>
+                <div class="field-row">
+                  <div class="field">
+                    <label class="label" for="logoBgHex">Logo background</label>
+                    <div class="color-field">
+                      <input type="color" id="logoBgColor" value="#ffffff" aria-label="Logo background color picker" />
+                      <input class="input input--mono" type="text" id="logoBgHex" value="#FFFFFF" maxlength="7" spellcheck="false" autocomplete="off" aria-label="Logo background hex color" />
+                    </div>
+                  </div>
+                  <div class="field field--stack">
+                    <label class="check" for="logoRound">
+                      <input type="checkbox" id="logoRound" checked />
+                      <span>Rounded logo corners</span>
+                    </label>
+                    <button class="btn btn--sm btn--danger-ghost" type="button" id="removeLogoBtn">
+                      <svg class="icon" aria-hidden="true"><use href="#i-trash"/></svg>
+                      Remove logo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- ---------------------- RIGHT: PREVIEW ---------------------- -->
+          <div class="workspace__preview">
+            <section class="card card--preview" aria-labelledby="previewHeading">
+              <div class="card__head card__head--tight">
+                <div>
+                  <h3 id="previewHeading">Live preview</h3>
+                  <p class="card__sub" id="previewSub">Your QR code appears here</p>
+                </div>
+                <div class="preview-tools">
+                  <button class="icon-btn" type="button" id="checkerToggle" aria-pressed="false" title="Toggle checkerboard behind the QR code" aria-label="Toggle checkerboard background">
+                    <svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg>
+                  </button>
+                  <button class="icon-btn" type="button" id="fullscreenPreview" title="Open a larger preview" aria-label="Open larger preview">
+                    <svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="qr-stage" id="qrStage">
+                <div class="qr-canvas" id="qrCanvasWrap">
+                </div>
+                <div class="qr-empty" id="qrEmpty">
+                  <span class="qr-empty__icon" aria-hidden="true"><svg class="icon"><use href="#i-qr"/></svg></span>
+                  <strong id="qrEmptyTitle">Your QR code will appear here</strong>
+                  <p id="qrEmptyText">Add some content on the left and it renders instantly — no uploads, no waiting.</p>
+                </div>
+                <div class="qr-loading" id="qrLoading" hidden>
+                  <span class="spinner" aria-hidden="true"></span>
+                  <span>Rendering…</span>
+                </div>
+              </div>
+
+              <div class="meta-grid" id="metaGrid">
+                <div class="meta"><span class="meta__k">Type</span><span class="meta__v" id="metaType">—</span></div>
+                <div class="meta"><span class="meta__k">Dimensions</span><span class="meta__v" id="metaDims">—</span></div>
+                <div class="meta"><span class="meta__k">Error correction</span><span class="meta__v" id="metaEcc">—</span></div>
+                <div class="meta"><span class="meta__k">Colors</span><span class="meta__v meta__v--colors" id="metaColors">—</span></div>
+                <div class="meta"><span class="meta__k">Logo</span><span class="meta__v" id="metaLogo">None</span></div>
+                <div class="meta"><span class="meta__k">Payload</span><span class="meta__v" id="metaBytes">—</span></div>
+              </div>
+
+              <div class="warnings" id="warningList" aria-live="polite"></div>
+
+              <div class="quick-actions">
+                <button class="btn btn--sm" type="button" id="copyContentBtn">
+                  <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy content
+                </button>
+                <button class="btn btn--sm" type="button" id="copyImageBtn">
+                  <svg class="icon" aria-hidden="true"><use href="#i-image"/></svg> Copy image
+                </button>
+                <button class="btn btn--sm" type="button" id="shareBtn">
+                  <svg class="icon" aria-hidden="true"><use href="#i-share"/></svg> Share
+                </button>
+                <button class="btn btn--sm" type="button" id="saveBtn">
+                  <svg class="icon" aria-hidden="true"><use href="#i-save"/></svg> Save
+                </button>
+              </div>
+            </section>
+
+            <section class="card card--export" aria-labelledby="exportHeading">
+              <div class="card__head card__head--tight">
+                <div>
+                  <h3 id="exportHeading">Download</h3>
+                  <p class="card__sub">Real files, rendered from your exact design.</p>
+                </div>
+                <span class="badge badge--soft" id="exportBadge">PNG</span>
+              </div>
+
+              <div class="field">
+                <span class="label" id="formatLabel">Format</span>
+                <div class="segmented segmented--wide" id="formatGroup" role="radiogroup" aria-labelledby="formatLabel">
+                  <label class="seg"><input type="radio" name="format" value="png" checked /><span>PNG</span></label>
+                  <label class="seg"><input type="radio" name="format" value="svg" /><span>SVG</span></label>
+                  <label class="seg"><input type="radio" name="format" value="jpeg" /><span>JPEG</span></label>
+                </div>
+                <p class="help-text" id="formatHint">PNG supports transparency and is best for most uses.</p>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label class="label" for="sizeSelect">Resolution</label>
+                  <select class="select" id="sizeSelect">
+                    <option value="512">512 × 512</option>
+                    <option value="1024" selected>1024 × 1024</option>
+                    <option value="2048">2048 × 2048</option>
+                    <option value="custom">Custom…</option>
+                  </select>
+                </div>
+                <div class="field" id="jpegQualityField" hidden>
+                  <div class="label-row">
+                    <label class="label" for="jpegQuality">JPEG quality</label>
+                    <output class="value-chip" id="jpegQualityValue" for="jpegQuality">92%</output>
+                  </div>
+                  <input class="range" type="range" id="jpegQuality" min="50" max="100" step="1" value="92" />
+                </div>
+              </div>
+
+              <div class="field-row" id="customSizeField" hidden>
+                <div class="field">
+                  <label class="label" for="customW">Width (px)</label>
+                  <input class="input" type="number" id="customW" min="128" max="4096" step="1" value="1200" inputmode="numeric" />
+                </div>
+                <div class="field">
+                  <label class="label" for="customH">Height (px)</label>
+                  <input class="input" type="number" id="customH" min="128" max="4096" step="1" value="1200" inputmode="numeric" />
+                </div>
+              </div>
+
+              <label class="check" for="includeQuietZone">
+                <input type="checkbox" id="includeQuietZone" checked />
+                <span>Include quiet zone in export</span>
+              </label>
+
+              <p class="help-text" id="exportNote">The QR code is never stretched: custom sizes centre it on the background colour, so it stays scannable. Minimum 128px, maximum 4096px.</p>
+
+              <button class="btn btn--primary btn--block" type="button" id="downloadBtn">
+                <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+                Download PNG · 1024px
+              </button>
+              <p class="help-text help-text--center" id="exportEstimate">Rendered locally in your browser.</p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= TEMPLATES ============================= -->
+    <section class="section section--alt" id="templates">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="eyebrow">Start faster</p>
+            <h2>Templates</h2>
+            <p class="section-sub">Each template selects the right QR type and fills in clearly labelled example values you can replace.</p>
+          </div>
+        </header>
+        <div class="template-grid" id="templateGrid"><!-- filled by app.js --></div>
+      </div>
+    </section>
+
+    <!-- ============================= SAVED ============================= -->
+    <section class="section" id="saved">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="eyebrow">Local library</p>
+            <h2>My QR Codes</h2>
+            <p class="section-sub">Saved in this browser only — content, colors and design included. Clearing browser data removes them.</p>
+          </div>
+          <div class="section-head__tools">
+            <div class="search-field">
+              <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+              <input class="input" type="search" id="savedSearch" placeholder="Search by name or content…" aria-label="Search saved QR codes" autocomplete="off" />
+            </div>
+            <select class="select select--compact" id="savedFilter" aria-label="Filter saved QR codes by type">
+              <option value="all">All types</option>
+            </select>
+          </div>
+        </header>
+
+        <p class="result-count" id="savedCount" role="status" aria-live="polite"></p>
+        <div class="saved-grid" id="savedGrid"></div>
+
+        <div class="empty-state" id="savedEmpty">
+          <span class="empty-state__icon" aria-hidden="true"><svg class="icon"><use href="#i-save"/></svg></span>
+          <h3 class="empty-state__title">Nothing saved yet</h3>
+          <p class="empty-state__text">Generate a QR code you like and press <strong>Save</strong>. It will live here with all of its settings.</p>
+          <a class="btn btn--sm" href="#studio">Go to the studio</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= RECENT ============================= -->
+    <section class="section section--alt" id="recent">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="eyebrow">Recent activity</p>
+            <h2>Recent QR codes</h2>
+            <p class="section-sub">Every code you export or save is listed here (last 12) so you can reopen it in seconds.</p>
+          </div>
+          <div class="section-head__tools">
+            <button class="btn btn--sm" type="button" id="clearHistoryBtn">
+              <svg class="icon" aria-hidden="true"><use href="#i-trash"/></svg>
+              Clear history
+            </button>
+          </div>
+        </header>
+        <ul class="history-list" id="historyList"></ul>
+        <div class="empty-state empty-state--inline" id="historyEmpty">
+          <span class="empty-state__icon" aria-hidden="true"><svg class="icon"><use href="#i-history"/></svg></span>
+          <h3 class="empty-state__title">No recent activity</h3>
+          <p class="empty-state__text">Download or save a QR code and it will show up here.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= HELP ============================= -->
+    <section class="section" id="help">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="eyebrow">Help centre</p>
+            <h2>Scan testing &amp; FAQ</h2>
+            <p class="section-sub">QR Studio never claims a code was physically scanned for you. Always test before publishing — here is how.</p>
+          </div>
+        </header>
+
+        <div class="help-grid">
+          <article class="card card--scan" aria-labelledby="scanHeading">
+            <div class="card__head card__head--tight">
+              <span class="step-chip step-chip--accent" aria-hidden="true">4</span>
+              <div>
+                <h3 id="scanHeading">How to test your QR code</h3>
+                <p class="card__sub">Sixty seconds, one phone.</p>
+              </div>
+            </div>
+            <ol class="steps">
+              <li><strong>Download it.</strong> Use the Download panel and grab a PNG (or SVG) at the size you plan to publish.</li>
+              <li><strong>Open your phone camera.</strong> On iOS use the Camera app, on Android use the Camera or Google Lens.</li>
+              <li><strong>Scan the exported file.</strong> Show the file on another screen and scan it, or print it and scan the print.</li>
+              <li><strong>Verify the decoded content.</strong> Check the link, phone number, Wi-Fi details or event data is exactly right.</li>
+            </ol>
+            <div class="notice notice--info">
+              <svg class="icon" aria-hidden="true"><use href="#i-help"/></svg>
+              <p>Test at the final physical size. A QR code that works on a 512px screen may fail when printed small. Aim for at least 2&nbsp;cm × 2&nbsp;cm for short links.</p>
+            </div>
+          </article>
+
+          <article class="card card--scan" aria-labelledby="bestHeading">
+            <div class="card__head card__head--tight">
+              <span class="step-chip step-chip--accent" aria-hidden="true">5</span>
+              <div>
+                <h3 id="bestHeading">Scanning best practices</h3>
+                <p class="card__sub">Small choices, big difference.</p>
+              </div>
+            </div>
+            <ul class="ticks">
+              <li>Keep the foreground much darker than the background — high contrast scans best.</li>
+              <li>Never invert a QR code (light modules on dark) unless you have tested it on several phones.</li>
+              <li>Leave a quiet zone of at least 2 modules (4 is the standard) around the code.</li>
+              <li>Use error correction <strong>Q</strong> or <strong>H</strong> when you add a logo or expect print wear.</li>
+              <li>Keep logo coverage at or below 25% of the QR area and never cover the three corner eyes.</li>
+              <li>Export at 1024px or larger for print; 2048px for posters and banners.</li>
+            </ul>
+            <div class="notice notice--warn">
+              <svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>
+              <p>QR Studio checks contrast, quiet zone and logo coverage for you, but those are estimates. A final physical scan is still the only real test.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="faq" id="faqList">
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false">
+              <span>Is my data uploaded anywhere?</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+            </button>
+            <div class="faq__a" hidden><p>No. QR encoding, rendering and exporting all happen in your browser. Saved codes and recent activity live in this browser's LocalStorage. The only network requests are the page assets and the web font.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false">
+              <span>What is the difference between PNG and SVG?</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+            </button>
+            <div class="faq__a" hidden><p>PNG is a raster image — perfect for social media, apps and quick sharing. SVG is vector markup built from paths, so it stays razor sharp at any size and is the best choice for print. Both include your colors, shapes and logo.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false">
+              <span>Does a logo break the QR code?</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+            </button>
+            <div class="faq__a" hidden><p>A logo covers real modules. Error correction lets scanners rebuild a portion of the code: level M recovers about 15%, Q about 25% and H about 30%. That is why QR Studio recommends Q or H when a logo is enabled, warns above 20% coverage, and clears the covered modules to the background color for a clean look.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false">
+              <span>Why do my colors show a warning?</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+            </button>
+            <div class="faq__a" hidden><p>Scanners need contrast between dark modules and light background. QR Studio computes the WCAG contrast ratio and warns below 4.5:1, with a much louder warning below 2:1 — you can still export, because you decide what your scanner can read. Inverted codes (white modules on a dark background) are flagged too because some older scanners refuse to read them.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false">
+              <span>What happens if I clear my browser data?</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+            </button>
+            <div class="faq__a" hidden><p>Saved QR codes and recent activity are stored in LocalStorage, so clearing site data or using private browsing wipes them. Download anything important. If LocalStorage is blocked, the studio still works and tells you that saving is unavailable.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" type="button" aria-expanded="false">
+              <span>Which Wi-Fi, contact and event formats are used?</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+            </button>
+            <div class="faq__a" hidden><p>Wi-Fi codes use the standard <code>WIFI:T:…;S:…;P:…;H:…;;</code> string, contact cards use vCard 3.0, events use an iCalendar <code>VEVENT</code>, SMS uses <code>SMSTO:</code>, phone uses <code>tel:</code>, email uses <code>mailto:</code>, WhatsApp uses the official <code>wa.me</code> link format and locations use <code>geo:</code> coordinates or a Google Maps search URL.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= ABOUT ============================= -->
+    <section class="section section--about" id="about">
+      <div class="container about">
+        <div class="about__brand">
+          <img src="assets/logo.svg" alt="" width="52" height="52" loading="lazy" />
+          <div>
+            <h2>QR Studio</h2>
+            <p>A free QR code creation tool.</p>
+          </div>
+        </div>
+        <p class="about__text">
+          Built with HTML, CSS &amp; JavaScript — no frameworks, no build step, no tracking.
+          Created by <strong>Code With Sayak</strong>.
+        </p>
+        <div class="about__links">
+          <a class="btn btn--sm" data-social="github" href="#">
+            <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> GitHub
+          </a>
+          <a class="btn btn--sm" data-social="instagram" href="#">
+            <svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg> Instagram
+          </a>
+          <a class="btn btn--sm" data-social="telegram" href="#">
+            <svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg> Telegram
+          </a>
+          <a class="btn btn--sm" data-social="contact" href="#">
+            <svg class="icon" aria-hidden="true"><use href="#i-send"/></svg> Contact
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand--footer" href="#top">
+          <img src="assets/logo.svg" alt="" width="34" height="34" loading="lazy" />
+          <span class="brand__text"><strong>QR Studio</strong><small>by Code With Sayak</small></span>
+        </a>
+        <p class="footer-note">Design branded QR codes in your browser. No account, no upload, no tracking.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h4>Studio</h4>
+        <a href="#studio">Create a QR code</a>
+        <a href="#templates">Templates</a>
+        <a href="#saved">My QR Codes</a>
+        <a href="#recent">Recent activity</a>
+      </nav>
+      <div>
+        <h4>Resources</h4>
+        <a href="#help">Scan testing guide</a>
+        <a href="#help">FAQ</a>
+        <a href="README.md">README</a>
+        <a href="LICENSE">MIT License</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a data-social="github" href="#">GitHub</a>
+        <a data-social="instagram" href="#">Instagram</a>
+        <a data-social="telegram" href="#">Telegram</a>
+        <a data-social="contact" href="#">Contact</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> Code With Sayak. All rights reserved.</p>
+      <p class="footer-bottom__meta">QR Studio — a free QR code creation tool.</p>
+    </div>
+  </footer>
+
+  <!-- Toast + modal roots -->
+  <div class="toasts" id="toasts" role="status" aria-live="polite" aria-atomic="false"></div>
+  <div class="modal-root" id="modalRoot" hidden>
+    <div class="modal-backdrop" data-modal-close="true"></div>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalText" tabindex="-1" id="modalDialog">
+      <div class="modal__head">
+        <h3 id="modalTitle">Confirm</h3>
+        <button class="icon-btn icon-btn--plain" type="button" data-modal-close="true" aria-label="Close dialog">
+          <svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
+      </div>
+      <p class="modal__text" id="modalText"></p>
+      <div class="modal__body" id="modalBody"></div>
+      <div class="modal__actions" id="modalActions"></div>
+    </div>
+  </div>
+
+  <noscript>
+    <div class="noscript">QR Studio needs JavaScript to encode QR codes in your browser. Please enable JavaScript and reload.</div>
+  </noscript>
+
+  <!-- Vendor QR encoder (MIT, Kazuhiko Arase) then app modules -->
+  <script src="js/vendor/qrcode.js"></script>
+  <script src="js/utilities.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/qr-generator.js"></script>
+  <script src="js/export.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

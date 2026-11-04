@@ -1,0 +1,64 @@
+# ---------------------------------------------------------------------------
+# QR Studio — .gitignore
+# This is a static site: the only things worth ignoring are local tooling,
+# OS clutter, editor state, exported QR images and test artefacts.
+# Never commit real secrets — this project needs none.
+# ---------------------------------------------------------------------------
+
+# OS clutter
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editors / IDEs
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# Logs & temp files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.tmp
+*.bak
+*~
+
+# Local tooling / dependencies (the site itself has none)
+node_modules/
+.pnpm-store/
+package-lock.json
+yarn.lock
+.npm/
+
+# Build output (not used by this project, ignored for safety)
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Exported QR images (downloads belong outside the repo)
+exports/
+qr-codes/
+*.qr.png
+
+# Test artefacts
+coverage/
+.nyc_output/
+__snapshots__/
+test-results/
+playwright-report/
